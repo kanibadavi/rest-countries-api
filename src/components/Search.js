@@ -7,7 +7,6 @@ function Search() {
       .then((res) => res.json())
       .then((data) => {
         setSearch(data);
-        console.log(data);
       });
   }, []);
   function searchHandler(e) {
