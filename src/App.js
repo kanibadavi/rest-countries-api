@@ -2,6 +2,8 @@
 import "./App.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import Cards from "./components/Cards";
+// import Option from "./components/Option";
 
 // function App() {
 //   return (
@@ -28,6 +30,8 @@ function App() {
     <div>
       <Header />
       <Search />
+      <Cards />
+      {/* <Option /> */}
     </div>
   );
 }

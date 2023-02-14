@@ -1,28 +1,35 @@
 import { Card } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
-const Cards = (props) => {
+const Cards = ({ data }) => {
   return (
-    <Row>
-      <Col>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src={props.t.flags.png}
-            alt={props.t.flags.alt}
-          />
-          <Card.Body>
-            <Card.Title>{props.t.name.common}</Card.Title>
-            <Card.Text>
-              <div>Population:{props.t.population}</div>
-              <div>Region:{props.t.region}</div>
-              <div>Capital:{props.t.capital}</div>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+    <Container>
+      <Row>
+        {data?.map((item, index) => {
+          return (
+            <Col key={index}>
+              <Card style={{ width: "15rem" }}>
+                <Card.Img
+                  variant="top"
+                  src={item.flags.png}
+                  alt={item.flags.alt}
+                />
+                <Card.Body>
+                  <Card.Title>{item.name.common}</Card.Title>
+                  <Card.Text>
+                    <div>Population:{item.population}</div>
+                    <div>Region:{item.region}</div>
+                    <div>Capital:{item.capital}</div>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
   );
 };
 
