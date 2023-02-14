@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Stack from "react-bootstrap/Stack";
 import "./DarkMode.css";
+import { Button } from "react-bootstrap";
 
-function Header() {
+const Header = () => {
   const [theme, setTheme] = useState("light");
   function changeModeHandler() {
     setTheme(() => {
@@ -19,11 +20,15 @@ function Header() {
   return (
     <Stack direction="horizontal" gap={3} className={`App container ${theme}`}>
       <h1>Where in the world?🌏</h1>
-      <button onClick={changeModeHandler} className="ms-auto">
+      <Button
+        variant="secondary"
+        onClick={changeModeHandler}
+        className="ms-auto"
+      >
         Change Mode
-      </button>
+      </Button>
     </Stack>
   );
-}
+};
 
 export default Header;
